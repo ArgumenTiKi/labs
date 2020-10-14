@@ -21,9 +21,7 @@ int main()
 			s += p;
 		}
 		y = (exp(x) - exp(-x))/2 ;
-		cout << setw(45) << y << setw(45) << s << endl;
-		cout.setf(ios::fixed);
-        cout.precision(30);
+		cout << setw(15) << y << setw(15) << s << endl;
 	}
 	return 0;
 }
