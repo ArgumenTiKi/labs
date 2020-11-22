@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-11-22T16:49:13.673Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="EjFa6FMmekNgcQMRb_98" version="13.10.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-22T16:50:38.414Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="pVNVLjzRU956lPxHhbTE" version="13.10.0" type="github">
   <diagram id="2XYw5rfrzcdDfsoRY1aY" name="Page-1">
-    <mxGraphModel dx="1504" dy="1861" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="1757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,8 +22,8 @@
             <mxPoint x="281" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Si78nq0MEke1Vb-z9np_-14" value="p = p * ln9 * x2 / k&lt;br&gt;rez = rez + p&lt;br&gt;k = k + 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="325" y="515" width="110" height="50" as="geometry" />
+        <mxCell id="Si78nq0MEke1Vb-z9np_-14" value="p = p * ln9 * x2 / k&lt;br&gt;rez = rez + p&lt;br&gt;k = k + 1&lt;br&gt;s = rez" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="325" y="510" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="6ItXaO5hQTMBj_1F8REH-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="6ItXaO5hQTMBj_1F8REH-21" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -155,7 +155,7 @@
         <mxCell id="H2cdQdNsFVJgSfEbFwte-59" value="x1 = x1 + h" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="536" y="565" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="R6cZvxgfhZuNwIvXrBpr-4" value="s = rez&lt;br&gt;x1 = x1 + h" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="R6cZvxgfhZuNwIvXrBpr-4" value="x1 = x1 + h" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="226" y="700" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="R6cZvxgfhZuNwIvXrBpr-5" value="Вывод: x1, s, k" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
