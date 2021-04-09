@@ -1,0 +1,31 @@
+void ShowTree(Node* p, int level)
+{
+	if (p)
+	{
+		ShowTree(p->l, level + 1);
+		for (int i = 0; i < level; i++) cout << "   ";
+		cout << p->x << endl;
+		ShowTree(p->r, level + 1);
+	}
+}
+
+//level - высота древа:
+
+int HeightOfTree(Node* t)
+{
+	if (t->x == 0)
+		return 0;
+	int left, right;
+	if (t->l != NULL) {
+		left = HeightOfTree(t->l);
+	}
+	else
+		left = -1;
+	if (t->r != NULL) {
+		right = HeightOfTree(t->r);
+	}
+	else
+		right = -1;
+	int max = left > right ? left : right;
+	return max + 1;
+}
