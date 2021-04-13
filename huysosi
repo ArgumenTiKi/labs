@@ -1,31 +1,133 @@
-void ShowTree(Node* p, int level)
+#include <iostream>
+
+using namespace std;
+
+struct Spis {
+	double info;
+	Spis* next, * prev;
+}*begin, * end, * t;
+
+void Create(Spis**, Spis**, int);
+void Add(Spis**, Spis**, int);
+void View(double, Spis*);
+void Del(Spis**);
+
+void Create(Spis** b, Spis** e, int in)
 {
-	if (p)
+	t = new Spis;
+	t->info = in;
+	t->next = t->prev = NULL;
+	*b = *e = t;
+}
+
+void Add(Spis** b, Spis** e, int in)
+{
+	t = new Spis;
+	t->info = in;
+	t->next = NULL;
+	t->prev = *e;
+	(*e)->next = t;
+	*e = t;
+}
+
+void View(double kod, Spis* t)
+{
+	while (t != NULL)
 	{
-		ShowTree(p->l, level + 1);
-		for (int i = 0; i < level; i++) cout << "   ";
-		cout << p->x << endl;
-		ShowTree(p->r, level + 1);
+		cout << t->info << "\t";
+		if (kod == 0)t = t->next;
+		else t = t->prev;
 	}
 }
 
-//level - высота древа:
-
-int HeightOfTree(Node* t)
+double SrednArifm(Spis* t)
 {
-	if (t->x == 0)
-		return 0;
-	int left, right;
-	if (t->l != NULL) {
-		left = HeightOfTree(t->l);
+	float s = 0;
+	Spis* temp = t;
+	while (temp != NULL)
+	{
+		s += temp->info;
+		temp = temp->next;
 	}
-	else
-		left = -1;
-	if (t->r != NULL) {
-		right = HeightOfTree(t->r);
+	return s;
+}
+
+void Del(Spis** p)
+{
+	while (*p != NULL)
+	{
+		t = *p;
+		*p = (*p)->next;
+		delete t;
 	}
-	else
-		right = -1;
-	int max = left > right ? left : right;
-	return max + 1;
+}
+
+Spis* rasp(Spis* b, Spis** e) {
+	Spis* buf;
+	Spis* t;
+	Spis* z;
+	buf = b;
+	b = b->next;
+	b->prev = NULL;
+	buf->next = NULL;
+	buf->prev = *e;
+	(*e)->next = buf;
+	*e = buf;
+	buf = (*e)->prev;
+	(*e)->prev = (*e)->prev->prev;
+	(*e)->prev->next = *e;
+	buf->prev = NULL;
+	buf->next = b;
+	b->prev = buf;
+	b = buf;
+	return b;
+}
+
+void main()
+{
+	int num, in, i, kod, A;
+	Spis* begin, * end, * t;
+	begin = NULL;
+	end = NULL;
+	setlocale(0, "");
+
+	cout << "Введите количество элементов в списке: ";
+	cin >> num;
+
+	cout << "Введите элемент списка: ";
+	cin >> in;
+	Create(&begin, &end, in);
+	for (i = 1; i < num - 1; i++)
+	{
+		cout << "Введите элемент списка: ";
+		cin >> in;
+		Add(&begin, &end, in);
+	};
+newelement:
+	cout << "Введите элемент списка: ";
+	cin >> in;
+	Add(&begin, &end, in);
+	cout << "Введите 0 чтоб просмотреть с начала, 1 с конца ";
+	cin >> kod;
+	if (kod == 0) t = begin;
+	else t = end;
+	View(kod, t);
+	cout << endl << " Со сменой первого и последнего элементов:" << endl;
+	begin = rasp(begin, &end);
+	if (kod == 0) t = begin;
+	else t = end;
+	View(kod, t);
+
+	cout << "Хотите добавить элемент? 1-да" << endl;
+	cin >> A;
+	if (A == 1)
+	{
+		goto newelement;
+	}
+
+	double c = SrednArifm(t) / num;
+	t->info  = c;
+	View(kod, t);
+	Del(&begin);
+	cout << endl << endl;
 }
