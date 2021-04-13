@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+
+	double q, d, r, c, s;
+	int i, j, n, k, p, m;
+
+	cout << "Введите значение d: "; cin >> d;
+	cout << "Введите значение q: "; cin >> q;
+
+	double a[5][5] = { {q,  1, 0, 0, 0}, {1,-2, 1, 0, 0}, {0, 1, -2, 1, 0}, {0, 0, 1, -2, 1}, {0, 0, 0, 1, q} };
+	double b[5] = { 0, d, d, d, 0 };
+	double x[5];
+	
+	for (k = 0; k < 4; k++) {
+		p = k;
+		for (m = k + 1; m < 5; m++) {
+			if (fabs(a[p][k]) < fabs(a[m][k])) {
+				p = m;
+				for (j = 0; j < 5; j++) {
+					r = a[k][j];
+					a[k][j] = a[p][j];
+					a[p][j] = r;
+					r = b[k];
+					b[k] = b[p];
+					b[p] = r;
+				}
+			}
+			for (m = k + 1; m < 5; m++) {
+				c = a[m][k] / a[k][k];
+				b[m] = b[m] - c * b[k];
+				for (i = k; i < 5; i++)
+					a[m][i] = a[m][i] - c * a[k][i];
+			}
+		}
+	}
+
+	x[4] = b[4] / a[4][4];
+	for (k = 3; k > -1; k--) {
+		s = 0;
+		for (i = k + 1; i < 5; i++)
+			s = s + a[k][i] * x[i];
+		x[k] = (b[k] - s) / a[k][k];
+	}
+
+	cout << "Ответ: " << endl;
+	for (i = 0; i < 5; i++)
+		cout << "x" << i + 1 << " = " << x[i] << endl;
+}
