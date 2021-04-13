@@ -118,7 +118,7 @@ newelement:
 	else t = end;
 	View(kod, t);
 
-	cout << "Хотите добавить элемент? 1-да" << endl;
+	cout << endl << "Хотите добавить элемент? 1-да" << endl;
 	cin >> A;
 	if (A == 1)
 	{
@@ -126,8 +126,8 @@ newelement:
 	}
 
 	double c = SrednArifm(t) / num;
-	t->info  = c;
+	t->info = c;
+	cout << "Среднее арифметическое - " << c << endl << "Список элементов со средним арифметическим:" << endl;
 	View(kod, t);
 	Del(&begin);
-	cout << endl << endl;
 }
