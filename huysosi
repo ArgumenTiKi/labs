@@ -1,133 +1,57 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
-struct Spis {
-	double info;
-	Spis* next, * prev;
-}*begin, * end, * t;
-
-void Create(Spis**, Spis**, int);
-void Add(Spis**, Spis**, int);
-void View(double, Spis*);
-void Del(Spis**);
-
-void Create(Spis** b, Spis** e, int in)
+int main()
 {
-	t = new Spis;
-	t->info = in;
-	t->next = t->prev = NULL;
-	*b = *e = t;
-}
+	int X[10], Y[10];
+	int i, j;
+	int n = 5;
 
-void Add(Spis** b, Spis** e, int in)
-{
-	t = new Spis;
-	t->info = in;
-	t->next = NULL;
-	t->prev = *e;
-	(*e)->next = t;
-	*e = t;
-}
+	string file = "file.txt";
+	ifstream fin;
+	fin.open(file);
 
-void View(double kod, Spis* t)
-{
-	while (t != NULL)
-	{
-		cout << t->info << "\t";
-		if (kod == 0)t = t->next;
-		else t = t->prev;
-	}
-}
-
-double SrednArifm(Spis* t)
-{
-	float s = 0;
-	Spis* temp = t;
-	while (temp != NULL)
-	{
-		s += temp->info;
-		temp = temp->next;
-	}
-	return s;
-}
-
-void Del(Spis** p)
-{
-	while (*p != NULL)
-	{
-		t = *p;
-		*p = (*p)->next;
-		delete t;
-	}
-}
-
-Spis* rasp(Spis* b, Spis** e) {
-	Spis* buf;
-	Spis* t;
-	Spis* z;
-	buf = b;
-	b = b->next;
-	b->prev = NULL;
-	buf->next = NULL;
-	buf->prev = *e;
-	(*e)->next = buf;
-	*e = buf;
-	buf = (*e)->prev;
-	(*e)->prev = (*e)->prev->prev;
-	(*e)->prev->next = *e;
-	buf->prev = NULL;
-	buf->next = b;
-	b->prev = buf;
-	b = buf;
-	return b;
-}
-
-void main()
-{
-	int num, in, i, kod, A;
-	Spis* begin, * end, * t;
-	begin = NULL;
-	end = NULL;
-	setlocale(0, "");
-
-	cout << "Введите количество элементов в списке: ";
-	cin >> num;
-
-	cout << "Введите элемент списка: ";
-	cin >> in;
-	Create(&begin, &end, in);
-	for (i = 1; i < num - 1; i++)
-	{
-		cout << "Введите элемент списка: ";
-		cin >> in;
-		Add(&begin, &end, in);
-	};
-newelement:
-	cout << "Введите элемент списка: ";
-	cin >> in;
-	Add(&begin, &end, in);
-	cout << "Введите 0 чтоб просмотреть с начала, 1 с конца ";
-	cin >> kod;
-	if (kod == 0) t = begin;
-	else t = end;
-	View(kod, t);
-	cout << endl << " Со сменой первого и последнего элементов:" << endl;
-	begin = rasp(begin, &end);
-	if (kod == 0) t = begin;
-	else t = end;
-	View(kod, t);
-
-	cout << endl << "Хотите добавить элемент? 1-да" << endl;
-	cin >> A;
-	if (A == 1)
-	{
-		goto newelement;
+	int c = true;
+	i = 0;
+	if (fin.is_open()) {
+		while (!fin.eof()) {
+			if (c == true) {
+				fin >> X[i];
+				c = false;
+			}
+			else {
+				fin >> Y[i];
+				c = true;
+				i++;
+			}
+		}
 	}
 
-	double c = SrednArifm(t) / num;
-	t->info = c;
-	cout << "Среднее арифметическое - " << c << endl << "Список элементов со средним арифметическим:" << endl;
-	View(kod, t);
-	Del(&begin);
+	int s;
+
+	/*for (i = 0; i <= 4; i++)
+	{
+		cout << X[i] << " - ";
+		cout << Y[i] << endl;
+	}
+	*/
+	int delt[5];
+	for (i = 0; i < n; i++) {
+		delt[i] = Y[i];
+	}
+
+	int N;
+	N = Y[1];
+	fin.close();
+	for (j = 0; j < n; j++)
+	{
+		for (i = 0; i < n; i++)
+		{
+			s *= (X[j] - X[i]);
+		}
+		delt[j] = (delt[j] - delt[j + 1]) / (X[j] - X[j + 1]);
+		N += s * delt[j];
+	}
 }
