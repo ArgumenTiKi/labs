@@ -1,0 +1,43 @@
+
+#include <stdio.h>
+int main()
+{
+  int i, c;
+  c = 6;
+  int a[c], a_l[c - 2], a_r[c + 2];
+  for (i = 0; i<c; i++) 
+  {
+    printf("a[%d] = ", i);
+    scanf("%d", &a[i]);
+  }
+  for (i = 0; i<c; i++)
+  {
+    printf("%d ", a[i]);
+  }
+  // left
+  for (i = 0; i<c - 2; i++) 
+  {
+      a_l[i] = a [i + 2];
+  }
+  
+    for (i = 0; i<c - 2; i++)
+  {
+    printf("%d ", a_l[i]);
+  }
+  //right fill
+  
+  for (i = 0; i< 2; i++) 
+  {
+      
+  }
+  // right
+  for (i = 0; i<c + 2; i++) 
+  {
+      a_r[i] = a [i - 2];
+  }
+  
+    for (i = 0; i<c + 2; i++)
+  {
+    printf("%d ", a_r[i]);
+  }
+}
