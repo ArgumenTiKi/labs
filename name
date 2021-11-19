@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 int main()
 {
@@ -14,6 +13,7 @@ int main()
   {
     printf("%d ", a[i]);
   }
+  printf("\n");
   // left
   for (i = 0; i<c - 2; i++) 
   {
@@ -25,13 +25,13 @@ int main()
     printf("%d ", a_l[i]);
   }
   //right fill
-  
+  printf("\n");
   for (i = 0; i< 2; i++) 
   {
-      
+      a_r [i] = 0;
   }
   // right
-  for (i = 0; i<c + 2; i++) 
+  for (i = 2; i<c + 2; i++) 
   {
       a_r[i] = a [i - 2];
   }
