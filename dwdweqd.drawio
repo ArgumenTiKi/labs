@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-16T17:04:43.309Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="2CiqrUbpxBhP3BotSfan" version="17.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-16T17:07:30.882Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="HCUJ9rQy8N7TcZic26Hz" version="17.4.0" type="github">
   <diagram id="VWP-V-gQ_CtkoEKSoI8s" name="Page-1">
-    <mxGraphModel dx="2076" dy="1142" grid="1" gridSize="1" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="483" dy="266" grid="1" gridSize="1" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -343,7 +343,7 @@
         <mxCell id="tY3v_4gYZZbXEHpPjtdN-138" value="&lt;font style=&quot;font-size: 15px&quot;&gt;E&lt;sub&gt;fn&lt;br&gt;&lt;/sub&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="628" y="779" width="14" height="6" as="geometry" />
         </mxCell>
-        <mxCell id="tY3v_4gYZZbXEHpPjtdN-139" value="б" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="tY3v_4gYZZbXEHpPjtdN-139" value="в" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="296" y="791" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="tY3v_4gYZZbXEHpPjtdN-140" value="" style="endArrow=none;html=1;rounded=0;startArrow=none;" edge="1" parent="1">
